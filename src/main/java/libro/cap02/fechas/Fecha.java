@@ -5,6 +5,23 @@ public class Fecha {
 	private int mes;
 	private int anio;
 	
+	public Fecha(String s)
+	{
+		// busco la primera ocurrrencia de '/'
+		int pos1 = s.indexOf('/');
+		
+		// busco la ultima ocurrencia de '/'
+		int pos2 = s.lastIndexOf('/');
+		
+		// proceso el dia
+		String sDia = s.substring(0, pos1);
+		dia = Integer.parseInt(sDia);
+		
+		// proceso el anio
+		String sAnio = s.substring(pos2 + 1);
+		anio = Integer.parseInt(sAnio);
+	}
+	
 	// constructor recibe dia, mes y anio
 	public Fecha(int d, int m, int a)
 	{
