@@ -5,12 +5,17 @@ public class Fecha {
 	private int mes;
 	private int anio;
 	
-	// constructor
-	public Fecha(int d, int m, int a) {
-		super();
+	// constructor recibe dia, mes y anio
+	public Fecha(int d, int m, int a)
+	{
 		this.dia = d;
 		this.mes = m;
 		this.anio = a;
+	}
+	
+	// constructor sin argumentos
+	public Fecha()
+	{
 	}
 
 	public int getDia() {
