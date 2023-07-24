@@ -5,6 +5,53 @@ public class Fecha {
 	private int mes;
 	private int anio;
 	
+	// retorna la fecha expresada en dias
+	private int fechaToDias()
+	{
+		// no requiere demasiada explicacion...
+		return anio * 360 + mes * 30 + dia;
+	}
+	
+	// asigna la fecha expresada en dias a los atributos
+	private void diasToFecha(int i)
+	{
+		// dividimos por 360 y obtenemos el anio
+		anio = (int)i / 360;
+		
+		// del resto de la division anterior
+		// podremos obtener el mes y el dia
+		int resto = i % 360;
+		
+		// el mes es el resto dividido 30
+		mes = (int)resto / 30;
+		
+		// el resto de la division anterior son los dias
+		dia = resto % 30;
+		
+		// ajuste por si dia quedo en cero
+		if (dia == 0)
+		{
+			dia = 30;
+			mes--;
+		}
+		
+		// ajuste por si el mes quedo en cero
+		if (mes == 0)
+		{
+			mes = 12;
+			anio --;
+		}
+	}
+	
+	public void addDias(int d)
+	{
+		// convierto la fecha a dias y le sumo d
+		int sum = fechaToDias() + d;
+		
+		// la fecha resultante (sum) la separo en dia, mes y anio
+		diasToFecha(sum);
+	}
+	
 	public Fecha(String s)
 	{
 		// busco la primera ocurrrencia de '/'
@@ -16,6 +63,10 @@ public class Fecha {
 		// proceso el dia
 		String sDia = s.substring(0, pos1);
 		dia = Integer.parseInt(sDia);
+		
+		// proceso el mes
+		String sMes = s.substring(pos1 + 1, pos2);
+		mes = Integer.parseInt(sMes);
 		
 		// proceso el anio
 		String sAnio = s.substring(pos2 + 1);
