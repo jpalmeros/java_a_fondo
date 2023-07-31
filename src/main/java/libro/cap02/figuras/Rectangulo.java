@@ -6,6 +6,7 @@ public class Rectangulo extends FiguraGeometrica {
 	
 	public Rectangulo(double b, double h)
 	{
+		super("Rectangulo"); // constructor del padre
 		base = b;
 		altura = h;
 	}
