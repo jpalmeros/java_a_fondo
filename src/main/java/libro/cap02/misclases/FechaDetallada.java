@@ -3,12 +3,7 @@ package libro.cap02.misclases;
 import libro.cap02.fechas.Fecha;
 
 public class FechaDetallada extends Fecha
-{
-	public FechaDetallada(String f)
-	{
-		super(f);
-	}
-	
+{	
 	private static String meses[] = {"Enero"
 									,"Febrero"
 									,"Marzo"
@@ -21,6 +16,19 @@ public class FechaDetallada extends Fecha
 									,"Octubre"
 									,"Noviembre"
 									,"Diciembre"};
+	
+	
+	
+	public FechaDetallada(int dia, int mes, int anio) {
+		// invocamos al constructor del padre
+		super(dia, mes, anio);
+	}
+	
+	public FechaDetallada()
+	{
+		// invocamos al constructor del padre
+		super();
+	}
 	
 	public String toString()
 	{
