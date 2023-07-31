@@ -26,8 +26,14 @@ public class FechaDetallada extends Fecha
 	
 	public FechaDetallada()
 	{
+		// invocamos al constructor de tres int pasando ceros
+		super(0,0,0);
+	}
+	
+	public FechaDetallada(String f)
+	{
 		// invocamos al constructor del padre
-		super();
+		super(f);
 	}
 	
 	public String toString()
